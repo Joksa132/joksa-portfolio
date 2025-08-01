@@ -15,7 +15,19 @@ function App() {
       <ProjectsSection />
       <ContactSection />
       <Footer />
-      <Toaster />
+      <Toaster
+        theme="dark"
+        toastOptions={{
+          unstyled: true,
+          classNames: {
+            toast:
+              "bg-gradient-to-br from-gray-950 to-blue-950 text-white rounded-lg shadow-lg border border-blue-900 flex items-center px-4 py-3 gap-2",
+            title: "text-white font-semibold text-lg",
+            description: "text-gray-400",
+            icon: "text-blue-400",
+          },
+        }}
+      />
     </div>
   );
 }
