@@ -1,7 +1,11 @@
-import "./App.css";
+import { HeroSection } from "./components/sections/hero-section";
 
 function App() {
-  return <></>;
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <HeroSection />
+    </div>
+  );
 }
 
 export default App;
