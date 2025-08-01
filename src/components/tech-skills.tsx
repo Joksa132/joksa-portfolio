@@ -20,7 +20,7 @@ export function TechSkills() {
           textShadow: "0 0 20px rgba(147, 197, 253, 0.1)",
         }}
       >
-        TECH STACK
+        Tech Stack
         <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
       </motion.h3>
 
