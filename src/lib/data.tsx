@@ -24,3 +24,50 @@ export const techStack = [
   { name: "Express", logo: expressIcon, isCenter: false },
   { name: "Node.js", logo: nodejsIcon, isCenter: false },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    name: "The Outfit Aura",
+    description:
+      "Full-stack e-commerce web application with AI-powered product recommendations, dynamic product pages, and user authentication.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "Auth.js",
+      "Tailwind CSS",
+      "Shadcn/ui",
+      "Vercel AI SDK",
+    ],
+    images: [
+      "/placeholder.svg",
+      "/placeholder.svg",
+      "/placeholder.svg",
+      "/placeholder.svg",
+    ],
+    repository: "https://github.com/joksa132/the-outfit-aura",
+  },
+  {
+    id: 2,
+    name: "Nutrition-Track",
+    description:
+      "A mobile application built with React Native and Expo for monitoring daily nutritional intake, featuring a barcode scanner and dynamic daily nutritional allowances based on personal data.",
+    tech: [
+      "React Native",
+      "Expo",
+      "SQLite",
+      "TanStack Query",
+      "Zod",
+      "OpenFoodFacts API",
+    ],
+    images: [
+      "/placeholder.svg",
+      "/placeholder.svg",
+      "/placeholder.svg",
+      "/placeholder.svg",
+    ],
+    repository: "https://github.com/joksa132/nutrition-track",
+  },
+];
