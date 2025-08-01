@@ -1,6 +1,27 @@
 import { motion } from "motion/react";
+import { ProjectCard } from "../project-card";
+import { projects } from "@/lib/data";
+import { useState } from "react";
 
 export function ProjectsSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState<{
+    [key: number]: number;
+  }>({});
+
+  const nextImage = (projectId: number, totalImages: number) => {
+    setCurrentImageIndex((prev) => ({
+      ...prev,
+      [projectId]: ((prev[projectId] || 0) + 1) % totalImages,
+    }));
+  };
+
+  const prevImage = (projectId: number, totalImages: number) => {
+    setCurrentImageIndex((prev) => ({
+      ...prev,
+      [projectId]: ((prev[projectId] || 0) - 1 + totalImages) % totalImages,
+    }));
+  };
+
   return (
     <section
       id="projects"
@@ -25,7 +46,18 @@ export function ProjectsSection() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col gap-8"></div>
+        <div className="flex flex-col gap-8">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              currentImageIndex={currentImageIndex[project.id] || 0}
+              onNextImage={() => nextImage(project.id, project.images.length)}
+              onPrevImage={() => prevImage(project.id, project.images.length)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
