@@ -62,6 +62,15 @@ export function TechSkills() {
           </motion.div>
         )}
 
+        <div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full"
+          style={{
+            width: "360px",
+            height: "360px",
+            boxShadow: "0 0 40px rgba(139, 92, 246, 0.2)",
+          }}
+        />
+
         <motion.div
           animate={{ rotate: 360 }}
           transition={{
@@ -126,16 +135,6 @@ export function TechSkills() {
             );
           })}
         </motion.div>
-
-        {/* Orbital Ring (Halo) */}
-        <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-white/10 rounded-full"
-          style={{
-            width: "360px",
-            height: "360px",
-            boxShadow: "0 0 40px rgba(139, 92, 246, 0.2)",
-          }}
-        />
       </div>
     </div>
   );
