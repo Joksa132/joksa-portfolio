@@ -25,6 +25,7 @@ export function HeroSection({
             className="text-5xl lg:text-7xl font-bold"
           >
             <span className="text-white">Hi, I'm </span>
+            <span className="text-white">Nikola </span>
             <motion.span
               className="bg-gradient-to-r from-blue-300 via-white to-blue-400 bg-clip-text text-transparent cursor-pointer"
               style={{
@@ -39,8 +40,9 @@ export function HeroSection({
               }}
               whileTap={{ scale: 0.98 }}
             >
-              Joksa
+              'Joksa'
             </motion.span>
+            <span className="text-white"> Joksimovic</span>
           </motion.div>
 
           <motion.div
