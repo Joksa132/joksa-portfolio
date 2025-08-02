@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { ChevronLeft, ChevronRight, Github } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
 import { Badge } from "./ui/badge";
 
 type Project = {
@@ -10,6 +10,7 @@ type Project = {
   tech: string[];
   images: string[];
   repository: string;
+  livePreview: string;
 };
 
 type ProjectCardProps = {
@@ -18,6 +19,7 @@ type ProjectCardProps = {
   currentImageIndex: number;
   onNextImage: () => void;
   onPrevImage: () => void;
+  onImageClick: (src: string, alt: string) => void;
 };
 
 export function ProjectCard({
@@ -26,6 +28,7 @@ export function ProjectCard({
   currentImageIndex,
   onNextImage,
   onPrevImage,
+  onImageClick,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -40,6 +43,12 @@ export function ProjectCard({
             src={project.images[currentImageIndex]}
             alt={`${project.name} screenshot`}
             className="w-full h-72 object-cover cursor-pointer hover:opacity-90 transition-opacity duration-200 rounded-lg"
+            onClick={() =>
+              onImageClick(
+                project.images[currentImageIndex],
+                `${project.name} screenshot`
+              )
+            }
           />
           {project.images.length > 1 && (
             <>
@@ -96,7 +105,7 @@ export function ProjectCard({
 
         <Button
           asChild
-          className="bg-gradient-to-r from-gray-950 to-blue-950 hover:from-gray-900 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+          className="bg-gradient-to-r from-gray-800 to-blue-950 hover:from-gray-800 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
         >
           <a
             href={project.repository}
@@ -107,6 +116,21 @@ export function ProjectCard({
             View Repository
           </a>
         </Button>
+        {project.livePreview !== "" && (
+          <Button
+            asChild
+            className="bg-gradient-to-r from-gray-800 to-blue-950 hover:from-gray-800 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+          >
+            <a
+              href={project.livePreview}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Live Preview
+            </a>
+          </Button>
+        )}
       </div>
     </motion.div>
   );

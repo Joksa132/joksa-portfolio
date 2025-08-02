@@ -1,18 +1,40 @@
+import { useState } from "react";
 import { Footer } from "./components/footer";
+import { ImageModal } from "./components/image-modal";
 import { ContactSection } from "./components/sections/contact-section";
 import { HeroSection } from "./components/sections/hero-section";
 import { ProjectsSection } from "./components/sections/projects-section";
 import { Toaster } from "@/components/ui/sonner";
 
 function App() {
+  const [modalImage, setModalImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
+
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const openImageModal = (src: string, alt: string) => {
+    setModalImage({ src, alt });
+  };
+
+  const closeImageModal = () => {
+    setModalImage(null);
+  };
+
   return (
     <div className="min-h-screen bg-black text-white">
+      <ImageModal
+        isOpen={!!modalImage}
+        onClose={closeImageModal}
+        imageSrc={modalImage?.src || ""}
+        alt={modalImage?.alt || ""}
+      />
+
       <HeroSection onScrollToProjects={scrollToProjects} />
-      <ProjectsSection />
+      <ProjectsSection onImageClick={openImageModal} />
       <ContactSection />
       <Footer />
       <Toaster

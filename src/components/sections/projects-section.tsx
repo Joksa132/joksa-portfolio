@@ -3,7 +3,11 @@ import { ProjectCard } from "../project-card";
 import { projects } from "@/lib/data";
 import { useState } from "react";
 
-export function ProjectsSection() {
+export function ProjectsSection({
+  onImageClick,
+}: {
+  onImageClick: (src: string, alt: string) => void;
+}) {
   const [currentImageIndex, setCurrentImageIndex] = useState<{
     [key: number]: number;
   }>({});
@@ -55,6 +59,7 @@ export function ProjectsSection() {
               currentImageIndex={currentImageIndex[project.id] || 0}
               onNextImage={() => nextImage(project.id, project.images.length)}
               onPrevImage={() => prevImage(project.id, project.images.length)}
+              onImageClick={onImageClick}
             />
           ))}
         </div>
