@@ -32,9 +32,9 @@ export const projects = [
     description:
       "Full-stack e-commerce web application with AI-powered product recommendations, dynamic product pages, and user authentication.",
     tech: [
-      "Next.js",
-      "React",
       "TypeScript",
+      "React",
+      "Next.js",
       "Supabase",
       "Auth.js",
       "Tailwind CSS",
@@ -52,7 +52,7 @@ export const projects = [
   },
   {
     id: 2,
-    name: "Nutrition-Track",
+    name: "Nutrition Track",
     description:
       "A mobile application built with React Native and Expo for monitoring daily nutritional intake, featuring a barcode scanner and dynamic daily nutritional allowances based on personal data.",
     tech: [
@@ -70,6 +70,51 @@ export const projects = [
       "/nutrition-track/nutrition-track-4.jpg",
     ],
     repository: "https://github.com/joksa132/nutrition-track",
+    livePreview: "",
+  },
+  {
+    id: 3,
+    name: "Link Sharing App",
+    description:
+      "Full-stack web app built with React and Next.js designed for users to customize and share their personal links.",
+    tech: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "PostgreSQL",
+      "NextAuth.js",
+      "Zod",
+      "Tailwind CSS",
+    ],
+    images: ["/older-projects/link-sharing-app.png"],
+    repository: "https://github.com/Joksa132/link-sharing-app",
+    livePreview: "",
+  },
+  {
+    id: 4,
+    name: "To Do List",
+    description:
+      "Full-stack web app built with React and Next.js designed for users to manage tasks and organize them into lists.",
+    tech: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "NextAuth.js",
+    ],
+    images: ["/older-projects/to-do-list.png"],
+    repository: "https://github.com/Joksa132/todo-list",
+    livePreview: "",
+  },
+  {
+    id: 5,
+    name: "Markdown Playground",
+    description:
+      "Interactive web-based markdown editor that allows users to write markdown syntax and instantly preview the rendered output.",
+    tech: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+    images: ["/older-projects/markdown-playground.png"],
+    repository: "https://github.com/Joksa132/markdown-playground",
     livePreview: "",
   },
 ];
