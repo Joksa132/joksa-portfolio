@@ -45,8 +45,8 @@ export function ContactSection() {
   };
 
   return (
-    <section className="min-h-screen py-20 px-4 bg-gradient-to-br from-gray-950 via-gray-900 to-black">
-      <div className="max-w-4xl mx-auto">
+    <section className="min-h-screen py-20 px-4 bg-gradient-to-br from-gray-950 via-gray-900 to-black flex items-center justify-center">
+      <div className="max-w-4xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,13 +69,16 @@ export function ContactSection() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative overflow-hidden rounded-xl border border-blue-800 shadow-xl shadow-blue-900/50 bg-gray-900"
         >
-          <Card className="bg-gradient-to-br from-gray-950 to-blue-950 border-blue-900 shadow-2xl py-0">
+          <div className="absolute inset-0 z-0 bg-gradient-to-br from-gray-900 to-gray-950 opacity-40 rounded-xl"></div>
+
+          <Card className="bg-transparent border-none shadow-none py-0 relative z-10">
             <CardContent className="p-8">
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-4"
+                className="flex flex-col gap-6"
               >
                 <div>
                   <Input
@@ -84,7 +87,7 @@ export function ContactSection() {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="bg-gradient-to-r from-gray-950 to-blue-950 border-blue-900 text-white placeholder-blue-300 focus:border-blue-500"
+                    className="bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
                     required
                   />
                 </div>
@@ -96,7 +99,7 @@ export function ContactSection() {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    className="bg-gradient-to-r from-gray-950 to-blue-950 border-blue-900 text-white placeholder-blue-300 focus:border-blue-500"
+                    className="bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
                     required
                   />
                 </div>
@@ -107,7 +110,7 @@ export function ContactSection() {
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
-                    className="bg-gradient-to-r from-gray-950 to-blue-950 border-blue-900 text-white placeholder-blue-300 min-h-32 focus:border-blue-500"
+                    className="bg-gray-800 border border-gray-700 text-gray-100 placeholder-gray-400 min-h-32 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors duration-200"
                     required
                   />
                 </div>
@@ -115,7 +118,7 @@ export function ContactSection() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="bg-gradient-to-r from-gray-950 to-blue-950 hover:from-gray-900 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+                    className="bg-gradient-to-r from-gray-800 to-blue-950 hover:from-gray-800 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
                   >
                     <Mail className="mr-2 h-5 w-5" />
                     Send Message

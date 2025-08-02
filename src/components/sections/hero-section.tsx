@@ -63,7 +63,7 @@ export function HeroSection({
             <Button
               onClick={onScrollToProjects}
               size="lg"
-              className="bg-gradient-to-r from-gray-950 to-blue-950 hover:from-gray-900 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-gray-800 to-blue-950 hover:from-gray-800 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
             >
               Check my projects
             </Button>
