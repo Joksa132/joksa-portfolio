@@ -95,8 +95,8 @@ export function TechSkills() {
             }}
             whileHover={{
               scale: 1.2,
-              rotate: 15,
-              transition: { duration: 0.2 },
+              rotate: 360,
+              transition: { duration: 10, ease: "easeOut" },
             }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-blue-700 to-purple-800 rounded-full shadow-2xl cursor-pointer border-2 border-purple-500 z-10"
             style={{
@@ -116,7 +116,7 @@ export function TechSkills() {
                   height: `${centerIconSize * 0.4}px`,
                 }}
               />
-              <div className="text-white font-semibold text-xs sm:text-sm text-center leading-tight">
+              <div className="text-white font-semibold text-[0.5rem] sm:text-xs text-center leading-tight">
                 {centerTech.name}
               </div>
             </div>
@@ -191,7 +191,7 @@ export function TechSkills() {
                       height: `${orbitingIconSize * 0.5}px`,
                     }}
                   />
-                  <div className="text-white font-medium text-[0.6rem] sm:text-xs text-center leading-tight px-1">
+                  <div className="text-white font-medium text-[0.45rem] sm:text-[0.6rem] text-center leading-tight px-1">
                     {tech.name}
                   </div>
                 </motion.div>
