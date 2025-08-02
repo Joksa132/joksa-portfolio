@@ -42,12 +42,13 @@ export const projects = [
       "Vercel AI SDK",
     ],
     images: [
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
+      "/the-outfit-aura-1.png",
+      "/the-outfit-aura-2.png",
+      "/the-outfit-aura-3.png",
+      "/the-outfit-aura-4.png",
     ],
     repository: "https://github.com/joksa132/the-outfit-aura",
+    livePreview: "https://the-outfit-aura.vercel.app/",
   },
   {
     id: 2,
@@ -69,5 +70,6 @@ export const projects = [
       "/placeholder.svg",
     ],
     repository: "https://github.com/joksa132/nutrition-track",
+    livePreview: "",
   },
 ];
