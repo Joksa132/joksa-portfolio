@@ -1,20 +1,38 @@
 import { AnimatePresence, motion } from "motion/react";
 import { Button } from "./ui/button";
-import { X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 type ImageModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  imageSrc: string;
-  alt: string;
+  images: { src: string; alt: string }[];
+  initialIndex: number;
 };
 
 export function ImageModal({
   isOpen,
   onClose,
-  imageSrc,
-  alt,
+  images,
+  initialIndex,
 }: ImageModalProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(initialIndex);
+
+  useEffect(() => {
+    setCurrentImageIndex(initialIndex);
+  }, [initialIndex]);
+
+  const handleNext = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const currentImage = images[currentImageIndex];
+  const hasMultipleImages = images.length > 1;
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -40,9 +58,27 @@ export function ImageModal({
             >
               <X className="h-6 w-6" />
             </Button>
+            {hasMultipleImages && (
+              <>
+                <Button
+                  onClick={handlePrev}
+                  variant="ghost"
+                  className="absolute -left-15 top-1/2 -translate-y-1/2 z-10 bg-white/20 text-white hover:text-gray-300 hover:bg-white/40"
+                >
+                  <ChevronLeft className="h-8 w-8" />
+                </Button>
+                <Button
+                  onClick={handleNext}
+                  variant="ghost"
+                  className="absolute -right-15 top-1/2 -translate-y-1/2 z-10 bg-white/20 text-white hover:text-gray-300 hover:bg-white/40"
+                >
+                  <ChevronRight className="h-8 w-8" />
+                </Button>
+              </>
+            )}
             <img
-              src={imageSrc}
-              alt={alt}
+              src={currentImage.src}
+              alt={currentImage.alt}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg"
             />
           </motion.div>

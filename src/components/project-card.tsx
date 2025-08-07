@@ -8,7 +8,10 @@ type Project = {
   name: string;
   description: string;
   tech: string[];
-  images: string[];
+  images: {
+    src: string;
+    alt: string;
+  }[];
   repository: string;
   livePreview: string;
 };
@@ -19,7 +22,10 @@ type ProjectCardProps = {
   currentImageIndex: number;
   onNextImage: () => void;
   onPrevImage: () => void;
-  onImageClick: (src: string, alt: string) => void;
+  onImageClick: (
+    images: { src: string; alt: string }[],
+    initialIndex: number
+  ) => void;
 };
 
 export function ProjectCard({
@@ -40,15 +46,10 @@ export function ProjectCard({
       <div className="relative h-full">
         <div className="p-0 relative">
           <img
-            src={project.images[currentImageIndex]}
-            alt={`${project.name} screenshot`}
+            src={project.images[currentImageIndex].src}
+            alt={project.images[currentImageIndex].alt}
             className="w-full h-72 object-cover cursor-pointer hover:opacity-90 transition-opacity duration-200 rounded-lg"
-            onClick={() =>
-              onImageClick(
-                project.images[currentImageIndex],
-                `${project.name} screenshot`
-              )
-            }
+            onClick={() => onImageClick(project.images, currentImageIndex)}
           />
           {project.images.length > 1 && (
             <>

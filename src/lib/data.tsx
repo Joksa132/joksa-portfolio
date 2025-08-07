@@ -42,10 +42,22 @@ export const projects = [
       "Vercel AI SDK",
     ],
     images: [
-      "/the-outfit-aura/the-outfit-aura-1.png",
-      "/the-outfit-aura/the-outfit-aura-2.png",
-      "/the-outfit-aura/the-outfit-aura-3.png",
-      "/the-outfit-aura/the-outfit-aura-4.png",
+      {
+        src: "/the-outfit-aura/the-outfit-aura-1.png",
+        alt: "The Outfit Aura Image 1",
+      },
+      {
+        src: "/the-outfit-aura/the-outfit-aura-2.png",
+        alt: "The Outfit Aura Image 2",
+      },
+      {
+        src: "/the-outfit-aura/the-outfit-aura-3.png",
+        alt: "The Outfit Aura Image 3",
+      },
+      {
+        src: "/the-outfit-aura/the-outfit-aura-4.png",
+        alt: "The Outfit Aura Image 4",
+      },
     ],
     repository: "https://github.com/joksa132/the-outfit-aura",
     livePreview: "https://the-outfit-aura.vercel.app/",
@@ -64,10 +76,22 @@ export const projects = [
       "OpenFoodFacts API",
     ],
     images: [
-      "/nutrition-track/nutrition-track-1.jpg",
-      "/nutrition-track/nutrition-track-2.jpg",
-      "/nutrition-track/nutrition-track-3.jpg",
-      "/nutrition-track/nutrition-track-4.jpg",
+      {
+        src: "/nutrition-track/nutrition-track-1.jpg",
+        alt: "Nutrition Track Image 1",
+      },
+      {
+        src: "/nutrition-track/nutrition-track-2.jpg",
+        alt: "Nutrition Track Image 2",
+      },
+      {
+        src: "/nutrition-track/nutrition-track-3.jpg",
+        alt: "Nutrition Track Image 3",
+      },
+      {
+        src: "/nutrition-track/nutrition-track-4.jpg",
+        alt: "Nutrition Track Image 4",
+      },
     ],
     repository: "https://github.com/joksa132/nutrition-track",
     livePreview: "",
@@ -86,7 +110,12 @@ export const projects = [
       "Zod",
       "Tailwind CSS",
     ],
-    images: ["/older-projects/link-sharing-app.png"],
+    images: [
+      {
+        src: "/older-projects/link-sharing-app.png",
+        alt: "Link Sharing App Image",
+      },
+    ],
     repository: "https://github.com/Joksa132/link-sharing-app",
     livePreview: "",
   },
@@ -103,7 +132,9 @@ export const projects = [
       "Prisma ORM",
       "NextAuth.js",
     ],
-    images: ["/older-projects/to-do-list.png"],
+    images: [
+      { src: "/older-projects/to-do-list.png", alt: "To Do List Image" },
+    ],
     repository: "https://github.com/Joksa132/todo-list",
     livePreview: "",
   },
@@ -113,7 +144,12 @@ export const projects = [
     description:
       "Interactive web-based markdown editor that allows users to write markdown syntax and instantly preview the rendered output.",
     tech: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-    images: ["/older-projects/markdown-playground.png"],
+    images: [
+      {
+        src: "/older-projects/markdown-playground.png",
+        alt: "Markdown Playground Image",
+      },
+    ],
     repository: "https://github.com/Joksa132/markdown-playground",
     livePreview: "",
   },

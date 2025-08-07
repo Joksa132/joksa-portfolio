@@ -6,7 +6,10 @@ import { useState } from "react";
 export function ProjectsSection({
   onImageClick,
 }: {
-  onImageClick: (src: string, alt: string) => void;
+  onImageClick: (
+    images: { src: string; alt: string }[],
+    initialIndex: number
+  ) => void;
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState<{
     [key: number]: number;

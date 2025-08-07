@@ -7,30 +7,33 @@ import { ProjectsSection } from "./components/sections/projects-section";
 import { Toaster } from "@/components/ui/sonner";
 
 function App() {
-  const [modalImage, setModalImage] = useState<{
-    src: string;
-    alt: string;
+  const [modalData, setModalData] = useState<{
+    images: { src: string; alt: string }[];
+    initialIndex: number;
   } | null>(null);
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const openImageModal = (src: string, alt: string) => {
-    setModalImage({ src, alt });
+  const openImageModal = (
+    images: { src: string; alt: string }[],
+    initialIndex: number
+  ) => {
+    setModalData({ images, initialIndex });
   };
 
   const closeImageModal = () => {
-    setModalImage(null);
+    setModalData(null);
   };
 
   return (
     <div className="min-h-screen bg-black text-white font-sans">
       <ImageModal
-        isOpen={!!modalImage}
+        isOpen={!!modalData}
         onClose={closeImageModal}
-        imageSrc={modalImage?.src || ""}
-        alt={modalImage?.alt || ""}
+        images={modalData?.images || []}
+        initialIndex={modalData?.initialIndex || 0}
       />
 
       <HeroSection onScrollToProjects={scrollToProjects} />
