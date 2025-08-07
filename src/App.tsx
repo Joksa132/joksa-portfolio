@@ -30,6 +30,7 @@ function App() {
   return (
     <div className="min-h-screen bg-black text-white font-sans">
       <ImageModal
+        key={modalData?.images.length || 0}
         isOpen={!!modalData}
         onClose={closeImageModal}
         images={modalData?.images || []}
