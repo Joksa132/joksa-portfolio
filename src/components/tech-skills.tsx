@@ -61,23 +61,6 @@ export function TechSkills() {
 
   return (
     <div>
-      <motion.h3
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center relative"
-        style={{
-          background: "linear-gradient(45deg, #e0e7ff, #bfdbfe, #e0e7ff)",
-          backgroundClip: "text",
-          WebkitBackgroundClip: "text",
-          color: "transparent",
-          textShadow: "0 0 20px rgba(147, 197, 253, 0.1)",
-        }}
-      >
-        Tech Stack
-        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-      </motion.h3>
-
       <div
         ref={techSkillsContainerRef}
         className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] mx-auto"

@@ -118,7 +118,7 @@ export function ContactSection() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="bg-gradient-to-r from-gray-800 to-blue-950 hover:from-gray-800 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+                    className="bg-blue-950 hover:bg-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
                   >
                     <Mail className="mr-2 h-5 w-5" />
                     Send Message

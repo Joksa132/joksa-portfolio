@@ -97,7 +97,7 @@ export function ProjectCard({
             <Badge
               key={tech}
               variant="secondary"
-              className="bg-gradient-to-r from-gray-950 to-blue-950 text-white border border-blue-800"
+              className="bg-blue-950 text-white border border-blue-800"
             >
               {tech}
             </Badge>
@@ -106,7 +106,7 @@ export function ProjectCard({
 
         <Button
           asChild
-          className="bg-gradient-to-r from-gray-800 to-blue-950 hover:from-gray-800 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+          className="bg-blue-950 hover:bg-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
         >
           <a
             href={project.repository}
@@ -120,7 +120,7 @@ export function ProjectCard({
         {project.livePreview !== "" && (
           <Button
             asChild
-            className="bg-gradient-to-r from-gray-800 to-blue-950 hover:from-gray-800 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+            className="bg-blue-950 hover:bg-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
           >
             <a
               href={project.livePreview}

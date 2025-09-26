@@ -27,7 +27,7 @@ export function HeroSection({
             <span className="text-white">Hi, I'm </span>
             <span className="text-white">Nikola </span>
             <motion.span
-              className="bg-gradient-to-r from-blue-300 via-white to-blue-400 bg-clip-text text-transparent cursor-pointer"
+              className="w-fit bg-gradient-to-r from-blue-300 via-white to-blue-400 bg-clip-text text-transparent cursor-pointer"
               style={{
                 textShadow: "0 0 10px rgba(191, 219, 254, 0.3)",
                 filter: "drop-shadow(0 0 5px rgba(191, 219, 254, 0.2))",
@@ -65,7 +65,7 @@ export function HeroSection({
             <Button
               onClick={onScrollToProjects}
               size="lg"
-              className="bg-gradient-to-r from-gray-800 to-blue-950 hover:from-gray-800 hover:to-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+              className="bg-blue-950 hover:bg-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
             >
               Check my projects
             </Button>
