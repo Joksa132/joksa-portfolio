@@ -146,7 +146,7 @@ export function TechSkills() {
                   transition: { duration: 0.2 },
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="absolute bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 rounded-full shadow-2xl transition-all duration-300 border border-gray-700 hover:border-blue-400 hover:shadow-blue-500/20 group"
+                className="absolute bg-blue-900 rounded-full shadow-2xl transition-all duration-300 border border-gray-700 hover:border-blue-400 hover:shadow-blue-500/20 group"
                 style={{
                   left: `calc(50% + ${x}px - ${orbitingIconSize / 2}px)`,
                   top: `calc(50% + ${y}px - ${orbitingIconSize / 2}px)`,
