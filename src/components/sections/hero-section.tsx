@@ -25,24 +25,26 @@ export function HeroSection({
             className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold flex flex-col"
           >
             <span className="text-white">Hi, I'm </span>
-            <span className="text-white">Nikola </span>
-            <motion.span
-              className="w-fit bg-gradient-to-r from-blue-300 via-white to-blue-400 bg-clip-text text-transparent cursor-pointer"
-              style={{
-                textShadow: "0 0 10px rgba(191, 219, 254, 0.3)",
-                filter: "drop-shadow(0 0 5px rgba(191, 219, 254, 0.2))",
-              }}
-              whileHover={{
-                scale: 1.05,
-                textShadow: "0 0 20px rgba(191, 219, 254, 0.5)",
-                filter: "drop-shadow(0 0 10px rgba(191, 219, 254, 0.4))",
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              'Joksa'
-            </motion.span>
-            <span className="text-white"> Joksimovic</span>
+            <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-1">
+              <span className="text-white">Nikola</span>
+              <motion.span
+                className="w-fit bg-gradient-to-r from-blue-300 via-white to-blue-400 bg-clip-text text-transparent cursor-pointer"
+                style={{
+                  textShadow: "0 0 10px rgba(191, 219, 254, 0.3)",
+                  filter: "drop-shadow(0 0 5px rgba(191, 219, 254, 0.2))",
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  textShadow: "0 0 20px rgba(191, 219, 254, 0.5)",
+                  filter: "drop-shadow(0 0 10px rgba(191, 219, 254, 0.4))",
+                  transition: { duration: 0.3 },
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                'Joksa'
+              </motion.span>
+              <span className="text-white">Joksimovic</span>
+            </div>
           </motion.div>
 
           <motion.div
