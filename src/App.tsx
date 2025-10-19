@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
+    <div className="min-h-[100dvh] bg-black text-white font-sans">
       <ImageModal
         key={modalData?.images.length || 0}
         isOpen={!!modalData}

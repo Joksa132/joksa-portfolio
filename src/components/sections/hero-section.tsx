@@ -9,7 +9,7 @@ export function HeroSection({
   onScrollToProjects: () => void;
 }) {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-6 bg-gradient-to-br from-black via-gray-950 to-gray-900 overflow-hidden relative">
+    <section className="min-h-[100dvh] flex items-center justify-center px-4 py-6 bg-gradient-to-br from-black via-gray-950 to-gray-900 overflow-hidden relative">
       <StarsBackground />
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-6 md:gap-12 items-center z-20">
         <motion.div

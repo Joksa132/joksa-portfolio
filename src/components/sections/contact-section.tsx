@@ -45,7 +45,7 @@ export function ContactSection() {
   };
 
   return (
-    <section className="min-h-screen py-20 px-4 bg-gradient-to-br from-gray-950 via-gray-900 to-black flex items-center justify-center">
+    <section className="min-h-[100dvh] py-20 px-4 bg-gradient-to-br from-gray-950 via-gray-900 to-black flex items-center justify-center">
       <div className="max-w-4xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
