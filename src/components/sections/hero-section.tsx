@@ -53,9 +53,9 @@ export function HeroSection({
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <p className="text-sm md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-sm mx-auto lg:mx-0">
-              I am a Bachelor with Honours in Information Technologies,
-              committed to continuous learning with a constant drive to improve
-              my skills in Web Development.
+              I hold a Bachelor's degree with Honours in Information
+              Technologies and am committed to continuous learning, always
+              striving to improve my skills in web development.
             </p>
           </motion.div>
 
@@ -69,7 +69,7 @@ export function HeroSection({
               size="lg"
               className="bg-blue-950 hover:bg-blue-900 text-white px-8 py-3 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
             >
-              Check my projects
+              Check out my projects
             </Button>
           </motion.div>
         </motion.div>
