@@ -30,7 +30,7 @@ export const projects = [
     id: 1,
     name: "The Outfit Aura",
     description:
-      "Full-stack e-commerce web application with AI-powered product recommendations, dynamic product pages, and user authentication.",
+      "Full-stack e-commerce web application built with Next.js with AI-powered product recommendations, dynamic product pages, product filtering, and user authentication.",
     tech: [
       "TypeScript",
       "React",
@@ -64,6 +64,41 @@ export const projects = [
   },
   {
     id: 2,
+    name: "Note Board",
+    description:
+      "A full-stack sticky notes web app built with Vite, React, and TypeScript. Features draggable and resizable markdown notes, folder organization, Supabase authentication, and Vercel Serverless API.",
+    tech: [
+      "TypeScript",
+      "React",
+      "Vite",
+      "TanStack Router",
+      "TanStack Query",
+      "Supabase",
+      "Vercel Serverless Functions",
+      "Tailwind CSS",
+      "Shadcn/ui",
+      "React Markdown",
+      "Pragmatic Drag and Drop",
+    ],
+    images: [
+      {
+        src: "/note-board/note-board-1.png",
+        alt: "Note Board Image 1",
+      },
+      {
+        src: "/note-board/note-board-2.png",
+        alt: "Note Board Image 2",
+      },
+      {
+        src: "/note-board/note-board-3.png",
+        alt: "Note Board Image 3",
+      },
+    ],
+    repository: "https://github.com/joksa132/note-board",
+    livePreview: "https://note-board-joksa132.vercel.app/",
+  },
+  {
+    id: 3,
     name: "Nutrition Track",
     description:
       "A mobile application built with React Native and Expo for monitoring daily nutritional intake, featuring a barcode scanner and dynamic daily nutritional allowances based on personal data.",
@@ -97,7 +132,7 @@ export const projects = [
     livePreview: "",
   },
   {
-    id: 3,
+    id: 4,
     name: "Link Sharing App",
     description:
       "Full-stack web app built with React and Next.js designed for users to customize and share their personal links.",
@@ -120,7 +155,7 @@ export const projects = [
     livePreview: "",
   },
   {
-    id: 4,
+    id: 5,
     name: "To Do List",
     description:
       "Full-stack web app built with React and Next.js designed for users to manage tasks and organize them into lists.",
@@ -139,7 +174,7 @@ export const projects = [
     livePreview: "",
   },
   {
-    id: 5,
+    id: 6,
     name: "Markdown Playground",
     description:
       "Interactive web-based markdown editor that allows users to write markdown syntax and instantly preview the rendered output.",
