@@ -93,6 +93,10 @@ export const projects = [
         src: "/note-board/note-board-3.png",
         alt: "Note Board Image 3",
       },
+      {
+        src: "/note-board/note-board-4.png",
+        alt: "Note Board Image 4",
+      },
     ],
     repository: "https://github.com/joksa132/note-board",
     livePreview: "https://note-board-joksa132.vercel.app/",
