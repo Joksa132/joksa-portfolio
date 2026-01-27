@@ -1,37 +1,54 @@
-import { AnimatePresence, motion } from "motion/react";
-import { Button } from "./ui/button";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
 
-type ImageModalProps = {
+interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
   images: { src: string; alt: string }[];
-  initialIndex: number;
-};
+  initialIndex?: number;
+}
 
-export function ImageModal({
-  isOpen,
-  onClose,
-  images,
-  initialIndex,
-}: ImageModalProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(initialIndex);
+export function ImageModal({ isOpen, onClose, images, initialIndex = 0 }: ImageModalProps) {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+
+  // Reset to first image when images array changes (new project opened)
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [images]);
+
+  const goToPrevious = useCallback(() => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  }, [images.length]);
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  }, [images.length]);
 
   useEffect(() => {
-    setCurrentImageIndex(initialIndex);
-  }, [initialIndex]);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isOpen) return;
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") goToPrevious();
+      if (e.key === "ArrowRight") goToNext();
+    };
 
-  const handleNext = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length);
-  };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose, goToPrevious, goToNext]);
 
-  const handlePrev = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
-  const currentImage = images[currentImageIndex];
-  const hasMultipleImages = images.length > 1;
+  if (images.length === 0) return null;
 
   return (
     <AnimatePresence>
@@ -40,48 +57,71 @@ export function ImageModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm"
           onClick={onClose}
         >
-          <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.5, opacity: 0 }}
-            className="relative max-w-full max-h-[95vh] w-fit flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors z-10"
           >
-            <Button
-              onClick={onClose}
-              variant="ghost"
-              size="sm"
-              className="absolute -top-8 right-0 text-white hover:text-gray-300 hover:bg-white/10 z-10"
-            >
-              <X className="h-6 w-6" />
-            </Button>
-            {hasMultipleImages && (
-              <>
-                <Button
-                  onClick={handlePrev}
-                  variant="ghost"
-                  className="absolute -left-15 top-1/2 -translate-y-1/2 z-10 bg-white/20 text-white hover:text-gray-300 hover:bg-white/40"
-                >
-                  <ChevronLeft className="h-8 w-8" />
-                </Button>
-                <Button
-                  onClick={handleNext}
-                  variant="ghost"
-                  className="absolute -right-15 top-1/2 -translate-y-1/2 z-10 bg-white/20 text-white hover:text-gray-300 hover:bg-white/40"
-                >
-                  <ChevronRight className="h-8 w-8" />
-                </Button>
-              </>
-            )}
-            <img
-              src={currentImage.src}
-              alt={currentImage.alt}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg"
-            />
-          </motion.div>
+            <X className="h-6 w-6" />
+          </button>
+
+          {/* Navigation buttons */}
+          {images.length > 1 && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToPrevious();
+                }}
+                className="absolute left-4 p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors z-10"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToNext();
+                }}
+                className="absolute right-4 p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors z-10"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </button>
+            </>
+          )}
+
+          {/* Image */}
+          <motion.img
+            key={currentIndex}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            src={images[currentIndex].src}
+            alt={images[currentIndex].alt}
+            className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          {/* Dots indicator */}
+          {images.length > 1 && (
+            <div className="absolute bottom-6 flex gap-2">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrentIndex(index);
+                  }}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === currentIndex ? "bg-primary" : "bg-muted-foreground/50"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </motion.div>
       )}
     </AnimatePresence>
