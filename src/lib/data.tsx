@@ -9,20 +9,22 @@ import electronIcon from "../assets/icons/electron.svg";
 import expressIcon from "../assets/icons/express.svg";
 import nodejsIcon from "../assets/icons/nodejs.svg";
 import viteIcon from "../assets/icons/vite.svg";
+import honoIcon from "../assets/icons/honojs.svg";
 
 export const techStack = [
-  { name: "JavaScript", logo: javascriptIcon, isCenter: true },
-  { name: "HTML", logo: htmlIcon, isCenter: false },
+  { name: "HTML", logo: htmlIcon },
   { name: "CSS", logo: cssIcon, isCenter: false },
-  { name: "TypeScript", logo: typescriptIcon, isCenter: false },
-  { name: "React", logo: reactIcon, isCenter: false },
-  { name: "React Native", logo: reactIcon, isCenter: false },
-  { name: "Next.js", logo: nextjsIcon, isCenter: false },
-  { name: "Expo", logo: expoIcon, isCenter: false },
-  { name: "Vite", logo: viteIcon, isCenter: false },
-  { name: "Electron", logo: electronIcon, isCenter: false },
-  { name: "Express", logo: expressIcon, isCenter: false },
-  { name: "Node.js", logo: nodejsIcon, isCenter: false },
+  { name: "JavaScript", logo: javascriptIcon },
+  { name: "TypeScript", logo: typescriptIcon },
+  { name: "React", logo: reactIcon },
+  { name: "React Native", logo: reactIcon },
+  { name: "Next.js", logo: nextjsIcon },
+  { name: "Vite", logo: viteIcon },
+  { name: "Expo", logo: expoIcon },
+  { name: "Express", logo: expressIcon },
+  { name: "Hono", logo: honoIcon },
+  { name: "Electron", logo: electronIcon },
+  { name: "Node.js", logo: nodejsIcon },
 ];
 
 export const projects = [
@@ -66,7 +68,7 @@ export const projects = [
     id: 2,
     name: "Note Board",
     description:
-      "A full-stack sticky notes web app built with Vite, React, and TypeScript. Features draggable and resizable markdown notes, folder organization, Supabase authentication, and Vercel Serverless API.",
+      "Full-stack sticky notes web app built with Vite, React, and TypeScript. Features draggable and resizable markdown notes, folder organization, Supabase authentication, and Vercel Serverless API.",
     tech: [
       "TypeScript",
       "React",
@@ -105,7 +107,7 @@ export const projects = [
     id: 3,
     name: "Nutrition Track",
     description:
-      "A mobile application built with React Native and Expo for monitoring daily nutritional intake, featuring a barcode scanner and dynamic daily nutritional allowances based on personal data.",
+      "Mobile application built with React Native and Expo for monitoring daily nutritional intake, featuring a barcode scanner and dynamic daily nutritional allowances based on personal data.",
     tech: [
       "React Native",
       "Expo",
