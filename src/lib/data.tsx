@@ -30,6 +30,49 @@ export const techStack = [
 export const projects = [
   {
     id: 1,
+    name: "HyperDocs",
+    description:
+      "Full-stack collaborative document editor built with React and Hono featuring real-time collaboration, AI-powered document summarization, rich text editing, and document sharing with role-based access control.",
+    tech: [
+      "TypeScript",
+      "React",
+      "Vite",
+      "TanStack Router",
+      "TanStack Query",
+      "Hono",
+      "Tiptap",
+      "HocusPocus",
+      "Yjs",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "Better Auth",
+      "OpenAI API",
+      "Tailwind CSS",
+      "Shadcn/ui",
+    ],
+    images: [
+      {
+        src: "/hyper-docs/hyper-docs-1.png",
+        alt: "HyperDocs Image 1",
+      },
+      {
+        src: "/hyper-docs/hyper-docs-2.png",
+        alt: "HyperDocs Image 2",
+      },
+      {
+        src: "/hyper-docs/hyper-docs-3.png",
+        alt: "HyperDocs Image 3",
+      },
+      {
+        src: "/hyper-docs/hyper-docs-4.png",
+        alt: "HyperDocs Image 4",
+      },
+    ],
+    repository: "https://github.com/joksa132/hyper-docs",
+    livePreview: "https://hyper-docs-joksa132.vercel.app/",
+  },
+  {
+    id: 2,
     name: "The Outfit Aura",
     description:
       "Full-stack e-commerce web application built with Next.js with AI-powered product recommendations, dynamic product pages, product filtering, and user authentication.",
@@ -63,45 +106,6 @@ export const projects = [
     ],
     repository: "https://github.com/joksa132/the-outfit-aura",
     livePreview: "https://the-outfit-aura.vercel.app/",
-  },
-  {
-    id: 2,
-    name: "Note Board",
-    description:
-      "Full-stack sticky notes web app built with Vite, React, and TypeScript. Features draggable and resizable markdown notes, folder organization, Supabase authentication, and Vercel Serverless API.",
-    tech: [
-      "TypeScript",
-      "React",
-      "Vite",
-      "TanStack Router",
-      "TanStack Query",
-      "Supabase",
-      "Vercel Serverless Functions",
-      "Tailwind CSS",
-      "Shadcn/ui",
-      "React Markdown",
-      "Pragmatic Drag and Drop",
-    ],
-    images: [
-      {
-        src: "/note-board/note-board-1.png",
-        alt: "Note Board Image 1",
-      },
-      {
-        src: "/note-board/note-board-2.png",
-        alt: "Note Board Image 2",
-      },
-      {
-        src: "/note-board/note-board-3.png",
-        alt: "Note Board Image 3",
-      },
-      {
-        src: "/note-board/note-board-4.png",
-        alt: "Note Board Image 4",
-      },
-    ],
-    repository: "https://github.com/joksa132/note-board",
-    livePreview: "https://note-board-joksa132.vercel.app/",
   },
   {
     id: 3,
@@ -139,59 +143,41 @@ export const projects = [
   },
   {
     id: 4,
-    name: "Link Sharing App",
+    name: "Note Board",
     description:
-      "Full-stack web app built with React and Next.js designed for users to customize and share their personal links.",
+      "Full-stack sticky notes web app built with Vite, React, and TypeScript. Features draggable and resizable markdown notes, folder organization, Supabase authentication, and Vercel Serverless API.",
     tech: [
       "TypeScript",
       "React",
-      "Next.js",
-      "PostgreSQL",
-      "NextAuth.js",
-      "Zod",
+      "Vite",
+      "TanStack Router",
+      "TanStack Query",
+      "Supabase",
+      "Serverless Functions",
+      "React Markdown",
+      "Pragmatic DnD",
       "Tailwind CSS",
+      "Shadcn/ui",
     ],
     images: [
       {
-        src: "/older-projects/link-sharing-app.png",
-        alt: "Link Sharing App Image",
+        src: "/note-board/note-board-1.png",
+        alt: "Note Board Image 1",
       },
-    ],
-    repository: "https://github.com/Joksa132/link-sharing-app",
-    livePreview: "",
-  },
-  {
-    id: 5,
-    name: "To Do List",
-    description:
-      "Full-stack web app built with React and Next.js designed for users to manage tasks and organize them into lists.",
-    tech: [
-      "TypeScript",
-      "React",
-      "Next.js",
-      "PostgreSQL",
-      "Prisma ORM",
-      "NextAuth.js",
-    ],
-    images: [
-      { src: "/older-projects/to-do-list.png", alt: "To Do List Image" },
-    ],
-    repository: "https://github.com/Joksa132/todo-list",
-    livePreview: "",
-  },
-  {
-    id: 6,
-    name: "Markdown Playground",
-    description:
-      "Interactive web-based markdown editor that allows users to write markdown syntax and instantly preview the rendered output.",
-    tech: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-    images: [
       {
-        src: "/older-projects/markdown-playground.png",
-        alt: "Markdown Playground Image",
+        src: "/note-board/note-board-2.png",
+        alt: "Note Board Image 2",
+      },
+      {
+        src: "/note-board/note-board-3.png",
+        alt: "Note Board Image 3",
+      },
+      {
+        src: "/note-board/note-board-4.png",
+        alt: "Note Board Image 4",
       },
     ],
-    repository: "https://github.com/Joksa132/markdown-playground",
-    livePreview: "",
+    repository: "https://github.com/joksa132/note-board",
+    livePreview: "https://note-board-joksa132.vercel.app/",
   },
 ];
