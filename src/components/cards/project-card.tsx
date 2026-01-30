@@ -30,11 +30,7 @@ export function ProjectCard({
   onViewImages,
 }: ProjectCardProps) {
   return (
-    <BentoCard
-      delay={delay}
-      colSpan={colSpan}
-      className="group overflow-hidden p-0"
-    >
+    <BentoCard delay={delay} colSpan={colSpan} className="group p-0">
       <div className="relative h-full flex flex-col">
         <motion.div
           className="relative h-36 overflow-hidden cursor-pointer"
@@ -86,21 +82,64 @@ export function ProjectCard({
           </div>
 
           <div className="flex flex-wrap gap-1 mb-3">
-            {tech.map((t, index) => (
-              <motion.div
-                key={t}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: delay + 0.15 + index * 0.02 }}
-              >
-                <Badge
-                  variant="secondary"
-                  className="text-[10px] px-1.5 py-0 h-5 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                >
-                  {t}
-                </Badge>
-              </motion.div>
-            ))}
+            {(() => {
+              const maxVisible = colSpan === 1 ? 6 : 15;
+              const visibleTech = tech.slice(0, maxVisible);
+              const hiddenTech = tech.slice(maxVisible);
+              const hasMore = hiddenTech.length > 0;
+
+              return (
+                <>
+                  {visibleTech.map((t, index) => (
+                    <motion.div
+                      key={t}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: delay + 0.15 + index * 0.02 }}
+                    >
+                      <Badge
+                        variant="secondary"
+                        className="text-[10px] px-1.5 py-0 h-5 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                      >
+                        {t}
+                      </Badge>
+                    </motion.div>
+                  ))}
+                  {hasMore && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        delay: delay + 0.15 + visibleTech.length * 0.02,
+                      }}
+                      className="relative group/more"
+                    >
+                      <Badge
+                        variant="outline"
+                        className="text-[10px] px-1.5 py-0 h-5 cursor-pointer hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors"
+                      >
+                        +{hiddenTech.length} more
+                      </Badge>
+                      <div className="absolute top-full left-0 z-20 opacity-0 pointer-events-none group-hover/more:opacity-100 group-hover/more:pointer-events-auto transition-opacity duration-200">
+                        <div className="bg-popover border border-border rounded-md shadow-lg p-2 min-w-max">
+                          <div className="flex flex-wrap gap-1 max-w-[180px]">
+                            {hiddenTech.map((t) => (
+                              <Badge
+                                key={t}
+                                variant="secondary"
+                                className="text-[10px] px-1.5 py-0 h-5 hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                              >
+                                {t}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </>
+              );
+            })()}
           </div>
 
           <div className="flex gap-2">
