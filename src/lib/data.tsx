@@ -12,6 +12,7 @@ import viteIcon from "../assets/icons/vite.svg";
 import honoIcon from "../assets/icons/honojs.svg";
 import postgresqlIcon from "../assets/icons/postgresql.svg";
 import mongodbIcon from "../assets/icons/mongodb.svg";
+import sqliteIcon from "../assets/icons/sqlite.svg";
 
 export const techStack = [
   { name: "HTML", logo: htmlIcon },
@@ -29,6 +30,7 @@ export const techStack = [
   { name: "Node.js", logo: nodejsIcon },
   { name: "PostgreSQL", logo: postgresqlIcon },
   { name: "MongoDB", logo: mongodbIcon },
+  { name: "SQLite", logo: sqliteIcon },
 ];
 
 export const projects = [
