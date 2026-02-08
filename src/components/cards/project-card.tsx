@@ -41,6 +41,7 @@ export function ProjectCard({
           <motion.img
             src={image}
             alt={name}
+            loading="lazy"
             className="w-full h-full object-cover object-top"
             whileHover={{ scale: 1.08 }}
             transition={{ duration: 0.5 }}
