@@ -9,10 +9,14 @@ interface ImageModalProps {
   initialIndex?: number;
 }
 
-export function ImageModal({ isOpen, onClose, images, initialIndex = 0 }: ImageModalProps) {
+export function ImageModal({
+  isOpen,
+  onClose,
+  images,
+  initialIndex = 0,
+}: ImageModalProps) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
-  // Reset to first image when images array changes (new project opened)
   useEffect(() => {
     setCurrentIndex(0);
   }, [images]);
@@ -57,21 +61,24 @@ export function ImageModal({ isOpen, onClose, images, initialIndex = 0 }: ImageM
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery"
           className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm"
           onClick={onClose}
         >
-          {/* Close button */}
           <button
+            aria-label="Close"
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors z-10"
           >
             <X className="h-6 w-6" />
           </button>
 
-          {/* Navigation buttons */}
           {images.length > 1 && (
             <>
               <button
+                aria-label="Previous image"
                 onClick={(e) => {
                   e.stopPropagation();
                   goToPrevious();
@@ -81,6 +88,7 @@ export function ImageModal({ isOpen, onClose, images, initialIndex = 0 }: ImageM
                 <ChevronLeft className="h-6 w-6" />
               </button>
               <button
+                aria-label="Next image"
                 onClick={(e) => {
                   e.stopPropagation();
                   goToNext();
@@ -92,7 +100,6 @@ export function ImageModal({ isOpen, onClose, images, initialIndex = 0 }: ImageM
             </>
           )}
 
-          {/* Image */}
           <motion.img
             key={currentIndex}
             initial={{ opacity: 0, scale: 0.95 }}
@@ -105,18 +112,20 @@ export function ImageModal({ isOpen, onClose, images, initialIndex = 0 }: ImageM
             onClick={(e) => e.stopPropagation()}
           />
 
-          {/* Dots indicator */}
           {images.length > 1 && (
             <div className="absolute bottom-6 flex gap-2">
               {images.map((_, index) => (
                 <button
                   key={index}
+                  aria-label={`Go to image ${index + 1}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setCurrentIndex(index);
                   }}
                   className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentIndex ? "bg-primary" : "bg-muted-foreground/50"
+                    index === currentIndex
+                      ? "bg-primary"
+                      : "bg-muted-foreground/50"
                   }`}
                 />
               ))}
