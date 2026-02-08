@@ -58,19 +58,19 @@ export const projects = [
     ],
     images: [
       {
-        src: "/hyper-docs/hyper-docs-1.png",
+        src: "/hyper-docs/hyper-docs-1.webp",
         alt: "HyperDocs Image 1",
       },
       {
-        src: "/hyper-docs/hyper-docs-2.png",
+        src: "/hyper-docs/hyper-docs-2.webp",
         alt: "HyperDocs Image 2",
       },
       {
-        src: "/hyper-docs/hyper-docs-3.png",
+        src: "/hyper-docs/hyper-docs-3.webp",
         alt: "HyperDocs Image 3",
       },
       {
-        src: "/hyper-docs/hyper-docs-4.png",
+        src: "/hyper-docs/hyper-docs-4.webp",
         alt: "HyperDocs Image 4",
       },
     ],
@@ -94,19 +94,19 @@ export const projects = [
     ],
     images: [
       {
-        src: "/the-outfit-aura/the-outfit-aura-1.png",
+        src: "/the-outfit-aura/the-outfit-aura-1.webp",
         alt: "The Outfit Aura Image 1",
       },
       {
-        src: "/the-outfit-aura/the-outfit-aura-2.png",
+        src: "/the-outfit-aura/the-outfit-aura-2.webp",
         alt: "The Outfit Aura Image 2",
       },
       {
-        src: "/the-outfit-aura/the-outfit-aura-3.png",
+        src: "/the-outfit-aura/the-outfit-aura-3.webp",
         alt: "The Outfit Aura Image 3",
       },
       {
-        src: "/the-outfit-aura/the-outfit-aura-4.png",
+        src: "/the-outfit-aura/the-outfit-aura-4.webp",
         alt: "The Outfit Aura Image 4",
       },
     ],
@@ -128,19 +128,19 @@ export const projects = [
     ],
     images: [
       {
-        src: "/nutrition-track/nutrition-track-1.jpg",
+        src: "/nutrition-track/nutrition-track-1.webp",
         alt: "Nutrition Track Image 1",
       },
       {
-        src: "/nutrition-track/nutrition-track-2.jpg",
+        src: "/nutrition-track/nutrition-track-2.webp",
         alt: "Nutrition Track Image 2",
       },
       {
-        src: "/nutrition-track/nutrition-track-3.jpg",
+        src: "/nutrition-track/nutrition-track-3.webp",
         alt: "Nutrition Track Image 3",
       },
       {
-        src: "/nutrition-track/nutrition-track-4.jpg",
+        src: "/nutrition-track/nutrition-track-4.webp",
         alt: "Nutrition Track Image 4",
       },
     ],
@@ -167,19 +167,19 @@ export const projects = [
     ],
     images: [
       {
-        src: "/note-board/note-board-1.png",
+        src: "/note-board/note-board-1.webp",
         alt: "Note Board Image 1",
       },
       {
-        src: "/note-board/note-board-2.png",
+        src: "/note-board/note-board-2.webp",
         alt: "Note Board Image 2",
       },
       {
-        src: "/note-board/note-board-3.png",
+        src: "/note-board/note-board-3.webp",
         alt: "Note Board Image 3",
       },
       {
-        src: "/note-board/note-board-4.png",
+        src: "/note-board/note-board-4.webp",
         alt: "Note Board Image 4",
       },
     ],
