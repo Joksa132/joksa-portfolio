@@ -27,9 +27,9 @@ export function ContactCard() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const serviceId = "service_o7mhz4c";
-    const templateId = "template_kf6q4kh";
-    const publicKey = "Mqvw0vTR8ralr2od4";
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     emailjs
       .sendForm(serviceId, templateId, formRef.current || "", publicKey)
@@ -40,7 +40,7 @@ export function ContactCard() {
         },
         () => {
           toast.error("Failed to send message. Please try again.");
-        }
+        },
       )
       .finally(() => {
         setIsSubmitting(false);
@@ -67,6 +67,7 @@ export function ContactCard() {
           <Input
             name="name"
             placeholder="Name"
+            aria-label="Name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             className="h-9 text-sm transition-all focus:scale-[1.01]"
@@ -76,8 +77,11 @@ export function ContactCard() {
             name="email"
             type="email"
             placeholder="Email"
+            aria-label="Email"
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             className="h-9 text-sm transition-all focus:scale-[1.01]"
             required
           />
@@ -90,8 +94,11 @@ export function ContactCard() {
           <Textarea
             name="message"
             placeholder="Your message..."
+            aria-label="Message"
             value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
             className="min-h-[80px] text-sm resize-none transition-all focus:scale-[1.005]"
             required
           />
@@ -108,7 +115,9 @@ export function ContactCard() {
             className="w-full h-9 transition-all hover:brightness-110"
             disabled={isSubmitting}
           >
-            <Send className={`h-3.5 w-3.5 mr-2 ${isSubmitting ? "animate-pulse" : ""}`} />
+            <Send
+              className={`h-3.5 w-3.5 mr-2 ${isSubmitting ? "animate-pulse" : ""}`}
+            />
             {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </motion.div>
