@@ -115,19 +115,7 @@ function App() {
               livePreview={featuredProjects[2].livePreview || undefined}
               onViewImages={openImageModal}
               delay={0.3}
-              colSpan={1}
-            />
-            <ProjectCard
-              name={featuredProjects[3].name}
-              description={featuredProjects[3].description}
-              tech={featuredProjects[3].tech}
-              image={featuredProjects[3].images[0].src}
-              images={featuredProjects[3].images}
-              repository={featuredProjects[3].repository}
-              livePreview={featuredProjects[3].livePreview || undefined}
-              onViewImages={openImageModal}
-              delay={0.35}
-              colSpan={1}
+              colSpan={2}
             />
 
             <ContactCard />

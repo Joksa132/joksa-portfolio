@@ -147,43 +147,4 @@ export const projects = [
     repository: "https://github.com/joksa132/nutrition-track",
     livePreview: "",
   },
-  {
-    id: 4,
-    name: "Note Board",
-    description:
-      "Full-stack sticky notes web app built with Vite, React, and TypeScript. Features draggable and resizable markdown notes, folder organization, Supabase authentication, and Vercel Serverless API.",
-    tech: [
-      "TypeScript",
-      "React",
-      "Vite",
-      "TanStack Router",
-      "TanStack Query",
-      "Supabase",
-      "Serverless Functions",
-      "React Markdown",
-      "Pragmatic DnD",
-      "Tailwind CSS",
-      "Shadcn/ui",
-    ],
-    images: [
-      {
-        src: "/note-board/note-board-1.webp",
-        alt: "Note Board Image 1",
-      },
-      {
-        src: "/note-board/note-board-2.webp",
-        alt: "Note Board Image 2",
-      },
-      {
-        src: "/note-board/note-board-3.webp",
-        alt: "Note Board Image 3",
-      },
-      {
-        src: "/note-board/note-board-4.webp",
-        alt: "Note Board Image 4",
-      },
-    ],
-    repository: "https://github.com/joksa132/note-board",
-    livePreview: "https://note-board-joksa132.vercel.app/",
-  },
 ];
