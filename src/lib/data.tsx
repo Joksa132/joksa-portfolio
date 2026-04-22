@@ -16,7 +16,7 @@ import sqliteIcon from "../assets/icons/sqlite.svg";
 
 export const techStack = [
   { name: "HTML", logo: htmlIcon },
-  { name: "CSS", logo: cssIcon, isCenter: false },
+  { name: "CSS", logo: cssIcon },
   { name: "JavaScript", logo: javascriptIcon },
   { name: "TypeScript", logo: typescriptIcon },
   { name: "React", logo: reactIcon },
@@ -35,7 +35,6 @@ export const techStack = [
 
 export const projects = [
   {
-    id: 1,
     name: "HyperDocs",
     description:
       "Full-stack collaborative document editor built with React and Hono featuring real-time collaboration, AI-powered document summarization, rich text editing, and document sharing with role-based access control.",
@@ -78,7 +77,6 @@ export const projects = [
     livePreview: "https://hyper-docs-joksa132.vercel.app/",
   },
   {
-    id: 2,
     name: "The Outfit Aura",
     description:
       "Full-stack e-commerce web application built with Next.js with AI-powered product recommendations, dynamic product pages, product filtering, and user authentication.",
@@ -114,7 +112,6 @@ export const projects = [
     livePreview: "https://the-outfit-aura.vercel.app/",
   },
   {
-    id: 3,
     name: "Nutrition Track",
     description:
       "Mobile application built with React Native and Expo for monitoring daily nutritional intake, featuring a barcode scanner and dynamic daily nutritional allowances based on personal data.",
