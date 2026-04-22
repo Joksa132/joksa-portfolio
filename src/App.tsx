@@ -16,24 +16,26 @@ const featuredProjects = projects.slice(0, 4);
 
 function App() {
   const [modalImages, setModalImages] = useState<
-    { src: string; alt: string }[] | null
-  >(null);
+    { src: string; alt: string }[]
+  >([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openImageModal = (images: { src: string; alt: string }[]) => {
     setModalImages(images);
+    setIsModalOpen(true);
   };
 
   const closeImageModal = () => {
-    setModalImages(null);
+    setIsModalOpen(false);
   };
 
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <div className="min-h-[100dvh] bg-background text-foreground font-sans">
         <ImageModal
-          isOpen={!!modalImages}
+          isOpen={isModalOpen}
           onClose={closeImageModal}
-          images={modalImages || []}
+          images={modalImages}
         />
 
         <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
