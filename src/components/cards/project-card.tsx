@@ -50,8 +50,8 @@ export function ProjectCard({
 
           {images.length > 1 && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: -10 }}
+              animate={{ y: 0 }}
               transition={{ delay: delay + 0.2 }}
               className="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded-full bg-background/80 backdrop-blur-sm text-xs hover:bg-background transition-colors"
             >
@@ -63,8 +63,8 @@ export function ProjectCard({
 
         <div className="p-4 flex flex-col flex-1">
           <motion.h3
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ x: -10 }}
+            animate={{ x: 0 }}
             transition={{ delay: delay + 0.1 }}
             className="font-semibold text-foreground mb-1.5"
           >
@@ -94,8 +94,8 @@ export function ProjectCard({
                   {visibleTech.map((t, index) => (
                     <motion.div
                       key={t}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      initial={{ scale: 0.8 }}
+                      animate={{ scale: 1 }}
                       transition={{ delay: delay + 0.15 + index * 0.02 }}
                     >
                       <Badge
@@ -108,8 +108,8 @@ export function ProjectCard({
                   ))}
                   {hasMore && (
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      initial={{ scale: 0.8 }}
+                      animate={{ scale: 1 }}
                       transition={{
                         delay: delay + 0.15 + visibleTech.length * 0.02,
                       }}

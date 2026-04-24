@@ -11,8 +11,8 @@ export function SkillsCard() {
           {techStack.map((tech, index) => (
             <motion.div
               key={tech.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
               transition={{ duration: 0.3, delay: 0.1 + index * 0.03 }}
               whileHover={{ scale: 1.05, y: -2 }}
               className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-secondary/50 hover:bg-secondary transition-colors group cursor-default"

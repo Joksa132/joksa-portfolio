@@ -50,8 +50,8 @@ export function ContactCard() {
   return (
     <BentoCard delay={0.4} colSpan={2}>
       <motion.h2
-        initial={{ opacity: 0, x: -10 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ x: -10 }}
+        animate={{ x: 0 }}
         transition={{ delay: 0.45 }}
         className="text-lg font-semibold text-foreground mb-3"
       >
@@ -59,8 +59,8 @@ export function ContactCard() {
       </motion.h2>
       <form ref={formRef} onSubmit={handleSubmit} className="space-y-3">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 10 }}
+          animate={{ y: 0 }}
           transition={{ delay: 0.5 }}
           className="grid grid-cols-2 gap-3"
         >
@@ -87,8 +87,8 @@ export function ContactCard() {
           />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 10 }}
+          animate={{ y: 0 }}
           transition={{ delay: 0.55 }}
         >
           <Textarea
@@ -104,8 +104,8 @@ export function ContactCard() {
           />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 10 }}
+          animate={{ y: 0 }}
           transition={{ delay: 0.6 }}
           whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.99 }}

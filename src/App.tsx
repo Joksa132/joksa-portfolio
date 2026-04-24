@@ -46,8 +46,8 @@ function App() {
         <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 h-14 flex justify-between items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ x: -20 }}
+              animate={{ x: 0 }}
               transition={{ duration: 0.4 }}
             >
               <span className="font-semibold text-lg">
@@ -55,8 +55,8 @@ function App() {
               </span>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ x: 20 }}
+              animate={{ x: 0 }}
               transition={{ duration: 0.4 }}
             >
               <ThemeToggle />
@@ -68,8 +68,8 @@ function App() {
           <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="text-center"
               >
