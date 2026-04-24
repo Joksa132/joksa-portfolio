@@ -48,22 +48,12 @@ export function ContactCard() {
   };
 
   return (
-    <BentoCard delay={0.4} colSpan={2}>
-      <motion.h2
-        initial={{ x: -10 }}
-        animate={{ x: 0 }}
-        transition={{ delay: 0.45 }}
-        className="text-lg font-semibold text-foreground mb-3"
-      >
+    <BentoCard colSpan={2}>
+      <h2 className="text-lg font-semibold text-foreground mb-3">
         Get in Touch
-      </motion.h2>
+      </h2>
       <form ref={formRef} onSubmit={handleSubmit} className="space-y-3">
-        <motion.div
-          initial={{ y: 10 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="grid grid-cols-2 gap-3"
-        >
+        <div className="grid grid-cols-2 gap-3">
           <Input
             name="name"
             placeholder="Name"
@@ -85,28 +75,19 @@ export function ContactCard() {
             className="h-9 text-sm transition-all focus:scale-[1.01]"
             required
           />
-        </motion.div>
+        </div>
+        <Textarea
+          name="message"
+          placeholder="Your message..."
+          aria-label="Message"
+          value={formData.message}
+          onChange={(e) =>
+            setFormData({ ...formData, message: e.target.value })
+          }
+          className="min-h-[80px] text-sm resize-none transition-all focus:scale-[1.005]"
+          required
+        />
         <motion.div
-          initial={{ y: 10 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.55 }}
-        >
-          <Textarea
-            name="message"
-            placeholder="Your message..."
-            aria-label="Message"
-            value={formData.message}
-            onChange={(e) =>
-              setFormData({ ...formData, message: e.target.value })
-            }
-            className="min-h-[80px] text-sm resize-none transition-all focus:scale-[1.005]"
-            required
-          />
-        </motion.div>
-        <motion.div
-          initial={{ y: 10 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.6 }}
           whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.99 }}
         >

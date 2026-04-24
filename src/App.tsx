@@ -11,7 +11,6 @@ import { ContactCard } from "@/components/cards/contact-card";
 import { LinksCard } from "@/components/cards/links-card";
 import { ImageModal } from "@/components/image-modal";
 import { projects } from "@/lib/data";
-import { motion } from "motion/react";
 
 const featuredProjects = projects.slice(0, 4);
 
@@ -45,34 +44,17 @@ function App() {
 
         <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 h-14 flex justify-between items-center">
-            <motion.div
-              initial={{ x: -20 }}
-              animate={{ x: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              <span className="font-semibold text-lg">
-                Joksa<span className="text-primary">.</span>
-              </span>
-            </motion.div>
-            <motion.div
-              initial={{ x: 20 }}
-              animate={{ x: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              <ThemeToggle />
-            </motion.div>
+            <span className="font-semibold text-lg">
+              Joksa<span className="text-primary">.</span>
+            </span>
+            <ThemeToggle />
           </div>
         </header>
 
         <main className="pt-14">
           <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ y: 20 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-center"
-              >
+              <div className="text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                   Hi, I'm{" "}
                   <span className="text-primary">Nikola Joksimovic</span>
@@ -80,7 +62,7 @@ function App() {
                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
                   Full-stack developer. Open to opportunities.
                 </p>
-              </motion.div>
+              </div>
             </div>
           </section>
 
@@ -96,7 +78,6 @@ function App() {
               repository={featuredProjects[0].repository}
               livePreview={featuredProjects[0].livePreview}
               onViewImages={openImageModal}
-              delay={0.2}
               colSpan={2}
             />
 
@@ -109,7 +90,6 @@ function App() {
               repository={featuredProjects[1].repository}
               livePreview={featuredProjects[1].livePreview}
               onViewImages={openImageModal}
-              delay={0.25}
               colSpan={2}
             />
             <ProjectCard
@@ -121,7 +101,6 @@ function App() {
               repository={featuredProjects[2].repository}
               livePreview={featuredProjects[2].livePreview || undefined}
               onViewImages={openImageModal}
-              delay={0.3}
               colSpan={2}
             />
 

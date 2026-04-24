@@ -36,22 +36,12 @@ const links = [
 
 export function LinksCard() {
   return (
-    <BentoCard delay={0.45} colSpan={2}>
-      <motion.h2
-        initial={{ x: -10 }}
-        animate={{ x: 0 }}
-        transition={{ delay: 0.5 }}
-        className="text-lg font-semibold text-foreground mb-3"
-      >
-        Connect
-      </motion.h2>
+    <BentoCard colSpan={2}>
+      <h2 className="text-lg font-semibold text-foreground mb-3">Connect</h2>
       <div className="grid grid-cols-2 gap-2">
-        {links.map((link, index) => (
+        {links.map((link) => (
           <motion.div
             key={link.name}
-            initial={{ y: 10 }}
-            animate={{ y: 0 }}
-            transition={{ delay: 0.5 + index * 0.05 }}
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
           >

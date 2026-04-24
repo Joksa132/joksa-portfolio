@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 interface BentoGridProps {
@@ -26,7 +25,6 @@ interface BentoCardProps {
   className?: string;
   colSpan?: 1 | 2 | 3 | 4;
   rowSpan?: 1 | 2;
-  delay?: number;
 }
 
 export function BentoCard({
@@ -34,7 +32,6 @@ export function BentoCard({
   className,
   colSpan = 1,
   rowSpan = 1,
-  delay = 0,
 }: BentoCardProps) {
   const colSpanClasses = {
     1: "md:col-span-1",
@@ -49,10 +46,7 @@ export function BentoCard({
   };
 
   return (
-    <motion.div
-      initial={{ y: 20 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.4, delay }}
+    <div
       className={cn(
         "rounded-xl bg-card border border-border p-5",
         "transition-all duration-300",
@@ -63,6 +57,6 @@ export function BentoCard({
       )}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
