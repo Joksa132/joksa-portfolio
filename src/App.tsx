@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeProvider } from "next-themes";
+import { inject } from "@vercel/analytics";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BentoGrid } from "@/components/bento-grid";
@@ -19,6 +20,10 @@ function App() {
     { src: string; alt: string }[]
   >([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    inject();
+  }, []);
 
   const openImageModal = (images: { src: string; alt: string }[]) => {
     setModalImages(images);
