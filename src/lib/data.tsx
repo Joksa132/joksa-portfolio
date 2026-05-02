@@ -77,6 +77,42 @@ export const projects = [
     livePreview: "https://hyper-docs-joksa132.vercel.app/",
   },
   {
+    name: "TechJobWatch",
+    description:
+      "Full-stack job-hunting tool that scrapes every JavaScript posting from three Serbian job boards each morning via GitHub Actions and puts them in one filterable dashboard. Includes save/apply/hide tracking with notes with postings that vanish from the source boards expiring automatically",
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "Better Auth",
+      "Cheerio",
+      "GitHub Actions",
+      "Tailwind CSS",
+    ],
+    images: [
+      {
+        src: "/tech-job-watch/tech-job-watch-1.webp",
+        alt: "TechJobWatch Image 1",
+      },
+      {
+        src: "/tech-job-watch/tech-job-watch-2.webp",
+        alt: "TechJobWatch Image 2",
+      },
+      {
+        src: "/tech-job-watch/tech-job-watch-3.webp",
+        alt: "TechJobWatch Image 3",
+      },
+      {
+        src: "/tech-job-watch/tech-job-watch-4.webp",
+        alt: "TechJobWatch Image 4",
+      },
+    ],
+    repository: "https://github.com/joksa132/tech-job-watch",
+    livePreview: "https://tech-job-watch.vercel.app/",
+  },
+  /*{
     name: "The Outfit Aura",
     description:
       "Full-stack e-commerce web application built with Next.js with AI-powered product recommendations, dynamic product pages, product filtering, and user authentication.",
@@ -110,7 +146,7 @@ export const projects = [
     ],
     repository: "https://github.com/joksa132/the-outfit-aura",
     livePreview: "https://the-outfit-aura.vercel.app/",
-  },
+  },*/
   {
     name: "Nutrition Track",
     description:

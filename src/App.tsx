@@ -103,7 +103,6 @@ function App() {
               onViewImages={openImageModal}
               colSpan={2}
             />
-
             <ContactCard />
             <LinksCard />
           </BentoGrid>
