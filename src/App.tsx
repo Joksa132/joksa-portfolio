@@ -81,28 +81,6 @@ function App() {
               colSpan={2}
             />
 
-            <ProjectCard
-              name={featuredProjects[1].name}
-              description={featuredProjects[1].description}
-              tech={featuredProjects[1].tech}
-              image={featuredProjects[1].images[0].src}
-              images={featuredProjects[1].images}
-              repository={featuredProjects[1].repository}
-              livePreview={featuredProjects[1].livePreview}
-              onViewImages={openImageModal}
-              colSpan={2}
-            />
-            <ProjectCard
-              name={featuredProjects[2].name}
-              description={featuredProjects[2].description}
-              tech={featuredProjects[2].tech}
-              image={featuredProjects[2].images[0].src}
-              images={featuredProjects[2].images}
-              repository={featuredProjects[2].repository}
-              livePreview={featuredProjects[2].livePreview || undefined}
-              onViewImages={openImageModal}
-              colSpan={2}
-            />
             <ContactCard />
             <LinksCard />
           </BentoGrid>
