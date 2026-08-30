@@ -35,7 +35,7 @@ export function ProjectCard({
     <BentoCard colSpan={colSpan} className="group p-0">
       <div className="relative h-full flex flex-col">
         <motion.div
-          className="relative h-36 overflow-hidden cursor-pointer"
+          className="relative flex-1 min-h-48 overflow-hidden cursor-pointer"
           onClick={() => onViewImages?.(images)}
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.3 }}
@@ -44,7 +44,7 @@ export function ProjectCard({
             src={image}
             alt={name}
             loading="lazy"
-            className="w-full h-full object-cover object-top"
+            className="absolute inset-0 w-full h-full object-cover object-top"
             whileHover={{ scale: 1.08 }}
             transition={{ duration: 0.5 }}
           />
@@ -58,10 +58,10 @@ export function ProjectCard({
           )}
         </motion.div>
 
-        <div className="p-4 flex flex-col flex-1">
+        <div className="p-4 flex flex-col">
           <h3 className="font-semibold text-foreground mb-1.5">{name}</h3>
 
-          <div className="mb-3 flex-1 relative group/desc">
+          <div className="mb-3 relative group/desc">
             <p className="text-xs text-muted-foreground line-clamp-2">
               {description}
             </p>
