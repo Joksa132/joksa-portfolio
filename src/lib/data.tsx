@@ -63,6 +63,10 @@ export const projects = [
         src: "/nutrition-track/nutrition-track-4.webp",
         alt: "Nutrition Track Image 4",
       },
+      {
+        src: "/nutrition-track/nutrition-track-5.webp",
+        alt: "Nutrition Track Image 5",
+      },
     ],
     repository: "https://github.com/joksa132/nutrition-track",
     livePreview: "",
