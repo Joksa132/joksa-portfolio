@@ -27,11 +27,11 @@ export function SkillsCard() {
               key={tech.name}
               whileHover={{ scale: 1.05, y: -2 }}
               className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-secondary/50 hover:bg-secondary transition-colors group cursor-default"
-              title={tech.name}
             >
               <img
                 src={tech.logo}
-                alt={tech.name}
+                alt=""
+                aria-hidden="true"
                 className="h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity dark:invert-[0.15] shrink-0"
               />
               <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">

@@ -51,9 +51,12 @@ export function ProjectCard({
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
 
           {images.length > 1 && (
-            <div className="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded-full bg-background/80 backdrop-blur-sm text-xs hover:bg-background transition-colors">
-              <Images className="h-3 w-3" />
-              <span>{images.length}</span>
+            <div
+              aria-label={`${images.length} screenshots`}
+              title={`${images.length} screenshots`}
+              className="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded-full bg-background/80 backdrop-blur-sm text-xs hover:bg-background transition-colors">
+              <Images className="h-3 w-3" aria-hidden="true" />
+              <span aria-hidden="true">{images.length}</span>
             </div>
           )}
         </motion.div>
@@ -61,15 +64,10 @@ export function ProjectCard({
         <div className="p-4 flex flex-col">
           <h3 className="font-semibold text-foreground mb-1.5">{name}</h3>
 
-          <div className="mb-3 relative group/desc">
-            <p className="text-xs text-muted-foreground line-clamp-2">
+          <div className="mb-3 relative h-8">
+            <p className="absolute inset-x-0 top-0 z-10 -m-2 p-2 rounded-md border border-transparent text-xs text-muted-foreground line-clamp-2 transition-shadow hover:line-clamp-none hover:bg-card hover:border-border hover:shadow-lg">
               {description}
             </p>
-            <div className="absolute left-0 right-0 top-0 z-10 opacity-0 pointer-events-none group-hover/desc:opacity-100 group-hover/desc:pointer-events-auto transition-opacity duration-200">
-              <p className="text-xs text-muted-foreground bg-card p-2 -m-2 rounded-md shadow-lg border border-border">
-                {description}
-              </p>
-            </div>
           </div>
 
           <div className="flex flex-wrap gap-1 mb-3">
