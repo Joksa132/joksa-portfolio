@@ -2,6 +2,20 @@ import { BentoCard } from "@/components/bento-grid";
 import { techStack } from "@/lib/data";
 import { motion } from "motion/react";
 
+const moreTools = [
+  "Tailwind CSS",
+  "TanStack Query",
+  "TanStack Router",
+  "Drizzle ORM",
+  "Prisma ORM",
+  "Zod",
+  "Better Auth",
+  "Supabase",
+  "WebSockets",
+  "Power BI",
+  "Git",
+];
+
 export function SkillsCard() {
   return (
     <BentoCard>
@@ -25,6 +39,12 @@ export function SkillsCard() {
               </span>
             </motion.div>
           ))}
+          <div
+            className="flex items-center px-2.5 py-1.5 rounded-full bg-secondary/50 hover:bg-secondary transition-colors cursor-default"
+            title={moreTools.join(", ")}
+          >
+            <span className="text-xs text-muted-foreground">and more</span>
+          </div>
         </div>
       </div>
     </BentoCard>

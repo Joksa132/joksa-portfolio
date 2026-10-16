@@ -7,6 +7,7 @@ import { BentoGrid } from "@/components/bento-grid";
 import { AboutCard } from "@/components/cards/about-card";
 import { SkillsCard } from "@/components/cards/skills-card";
 import { ProjectCard } from "@/components/cards/project-card";
+import { ExperienceCard } from "@/components/cards/experience-card";
 import { ContactCard } from "@/components/cards/contact-card";
 import { LinksCard } from "@/components/cards/links-card";
 import { ImageModal } from "@/components/image-modal";
@@ -52,7 +53,7 @@ function App() {
         </header>
 
         <main className="pt-14">
-          <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
+          <section className="pt-12 md:pt-16 lg:pt-20 pb-2 md:pb-4 px-4 md:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
               <div className="text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
@@ -60,8 +61,17 @@ function App() {
                   <span className="text-primary">Nikola Joksimovic</span>
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                  Full-stack developer. Open to opportunities.
+                  Software Developer at the Statistical Office of the Republic
+                  of Serbia, building the systems government institutions use to
+                  report and analyse data.
                 </p>
+                <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                  </span>
+                  Open to new roles
+                </div>
               </div>
             </div>
           </section>
@@ -81,6 +91,7 @@ function App() {
               colSpan={2}
             />
 
+            <ExperienceCard />
             <ContactCard />
             <LinksCard />
           </BentoGrid>
